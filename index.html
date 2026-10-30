@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F3EFE6">
+  <meta name="description" content="CrowdRank: three rounds, four choices, one score. Read the room, then challenge a friend.">
+  <meta property="og:title" content="CrowdRank — Can you read the room?">
+  <meta property="og:description" content="A 90-second social ranking challenge. Play the practice edition and challenge a friend.">
+  <title>CrowdRank — Read the room</title>
+  
+  
+  <style>:root{--paper:#F3EFE6;--ink:#171719;--signal:#FF5A39;--blue:#3653B7;--muted:#666761;--line:#D7D4CB;--white:#fff;--sky:#E5EAFB;--font:Inter,"Helvetica Neue",Arial,sans-serif;color-scheme:light;font-family:var(--font);font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}button,a{font:inherit}button{cursor:pointer;transition:background .16s ease,transform .16s ease,color .16s ease}button:disabled{cursor:not-allowed;opacity:.44}button:not(:disabled):active{transform:translateY(1px)}a{color:inherit}button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.page-wrap{width:min(1340px,100%);margin:0 auto;padding:0 clamp(18px,3vw,48px)}.global-header{min-height:89px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink)}.brand{text-decoration:none;font-size:clamp(21px,2.45vw,32px);font-weight:900;letter-spacing:-1.9px;white-space:nowrap}.brand span{color:var(--ink)}.brand i{display:inline-block;background:var(--signal);height:12px;width:12px;margin:0 0 1px 8px}.header-right{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:1.3px}.edition-label{color:var(--signal)}.top-rule{color:var(--line)}.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,470px);gap:clamp(24px,4vw,72px);padding:clamp(28px,3.2vw,54px) 0 clamp(42px,6vw,88px);align-items:start}.editorial{min-height:700px;display:flex;flex-direction:column;justify-content:space-between;padding:7px 0 0}.editorial-top{display:flex;gap:12px;align-items:center;font-size:11px;font-weight:800;letter-spacing:1.45px;color:var(--blue)}.micro-mark{width:8px;height:8px;background:var(--signal)}.editorial h1{font-weight:950;letter-spacing:clamp(-6px,-.5vw,-3px);line-height:.965;font-size:clamp(58px,6.7vw,107px);margin:34px 0}.editorial em{font-style:normal;color:var(--blue)}.editorial-bottom{display:flex;justify-content:space-between;gap:16px;align-items:end;border-top:2px solid var(--ink);padding-top:22px}.editorial-bottom p{margin:0;text-align:right;font-size:18px;line-height:1.45}.editorial-bottom strong{font-weight:850}.editorial-waves{display:flex;align-items:center;gap:4px}.editorial-waves span{width:30px;height:30px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:800}.editorial-waves span:nth-child(2){margin-left:-9px;background:var(--paper)}.editorial-waves span:nth-child(3){margin-left:-9px;background:var(--signal)}.game-frame{background:#F5F1E9;border:2px solid var(--ink);box-shadow:9px 9px 0 var(--ink);min-height:680px;padding:24px;position:relative;overflow:clip}.game-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:17px;border-bottom:1px solid var(--ink)}.game-top .wordmark{font-size:18px;font-weight:950;letter-spacing:-1.1px}.game-top .wordmark i{display:inline-block;width:8px;height:8px;background:var(--signal);margin-left:5px}.game-top .date{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:1.1px}.page-intro{margin-top:30px}.eyebrow{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.display{font-size:clamp(43px,4.25vw,63px);font-weight:950;line-height:1.02;letter-spacing:-3.7px;margin:12px 0 16px}.display.compact{font-size:clamp(38px,3.9vw,51px);letter-spacing:-2.6px}.display.small{font-size:37px;letter-spacing:-2px}.lede{color:#555650;line-height:1.5;font-size:15px;max-width:320px;margin:0 0 26px}.mode-strip{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--signal);color:var(--ink);padding:11px 12px;font-size:11px;font-weight:900;letter-spacing:.6px}.round-preview{margin:14px 0 26px;border:1px solid var(--line);background:var(--white);border-radius:11px;padding:17px}.preview-label{font-size:10px;color:var(--blue);font-weight:850;letter-spacing:.8px}.round-preview h3{font-size:23px;line-height:1.13;letter-spacing:-.7px;margin:11px 0 20px}.preview-option{display:flex;gap:13px;align-items:center;padding:9px 0;border-top:1px solid #e6e2db;font-size:13px;font-weight:750}.preview-option b{color:var(--signal);font-size:11px}.preview-option.muted-item{color:#777}.mini-note{font-size:10px;color:var(--muted);font-weight:700;line-height:1.45}.primary{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;border:2px solid var(--signal);border-radius:10px;background:var(--signal);color:var(--ink);font-size:13px;font-weight:950;letter-spacing:.25px;padding:13px 12px;text-transform:uppercase;text-align:center}.primary:hover:not(:disabled){background:#ff7155;border-color:#ff7155}.primary .arrow{margin-left:auto;font-size:20px;line-height:1}.primary:disabled{opacity:.45}.secondary{display:inline-flex;gap:6px;align-items:center;justify-content:center;min-height:44px;border:0;background:transparent;color:var(--blue);font-weight:800;font-size:12px;padding:8px 10px}.secondary:hover{color:#1e338d;text-decoration:underline}.secondary.block{width:100%}.fine-print{text-align:center;margin:12px 0 0;font-size:11px;color:var(--muted);line-height:1.45}.fine-print strong{color:var(--ink)}.practice-disclosure{margin-top:18px;border-left:3px solid var(--blue);padding:9px 12px;background:var(--sky);font-size:11px;line-height:1.42;color:#273d88}.practice-disclosure strong{display:block;font-weight:900;font-size:10px;letter-spacing:.75px}.progress-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0 12px}.progress-num{font-size:11px;font-weight:900}.progress-track{height:4px;border-radius:30px;background:#D9D6CE;overflow:hidden}.progress-track i{display:block;height:100%;background:var(--blue);transition:width .2s ease}.question{font-size:clamp(28px,3vw,38px);line-height:1.09;letter-spacing:-1.5px;font-weight:900;margin:25px 0 12px}.instruction{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.65px;text-transform:uppercase;margin-bottom:5px}.helper{color:#666761;font-size:12px;line-height:1.5;margin:0 0 15px}.ranking{display:grid;gap:7px;margin:16px 0}.rank-slot{min-height:61px;border:1px solid #DDD8CF;border-radius:10px;background:var(--white);display:flex;align-items:center;padding:7px 8px;gap:10px}.rank-slot.empty{border-style:dashed;background:#F6F4EF;color:#9B9993}.rank-digit{flex:0 0 30px;height:33px;background:#F0ECE4;border-radius:6px;font-weight:900;font-size:13px;display:grid;place-items:center}.filled .rank-digit{background:var(--blue);color:#fff}.slot-name{font-size:12px;font-weight:800;flex:1;line-height:1.25;min-width:0}.slot-placeholder{font-size:12px;flex:1;font-weight:600}.slot-controls{display:flex;gap:3px;margin-left:auto}.micro-btn{border:0;background:#F0ECE4;border-radius:7px;min-width:44px;min-height:44px;display:grid;place-items:center;color:var(--ink);font-weight:850;font-size:16px}.micro-btn:hover:not(:disabled){background:#DDE3F6}.micro-btn.remove{color:#B13C25}.picker-label{font-size:10px;font-weight:900;letter-spacing:1px;color:var(--blue);margin:14px 0 9px}.choice-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}.choice{min-height:56px;border:1px solid var(--line);background:#fff;border-radius:9px;text-align:left;font-size:12px;font-weight:800;line-height:1.3;padding:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}.choice:hover{border-color:var(--blue);background:var(--sky)}.choice b{font-size:22px;color:var(--signal);line-height:1;font-weight:500}.choice-list:empty{min-height:0;margin:0}.rank-done{background:var(--sky);color:var(--blue);padding:13px 14px;margin:10px 0 20px;border-radius:8px;font-size:12px;font-weight:800}.action-area{margin-top:17px}.status-line{color:var(--muted);font-size:10px;margin:10px 0 0;text-align:center}.reveal-head{padding-top:27px}.reveal-standout{font-size:clamp(34px,4.6vw,50px);letter-spacing:-2px;line-height:1.03;font-weight:950;margin:9px 0 6px}.score-hero{display:flex;align-items:baseline;gap:8px;margin:0 0 10px}.score-hero b{font-size:105px;line-height:1.02;letter-spacing:-7px;color:var(--blue);font-weight:950}.score-hero small{font-size:32px;font-weight:900;letter-spacing:-1px}.score-descriptor{font-size:10px;color:var(--muted);letter-spacing:.9px;font-weight:850}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid var(--ink);padding-top:18px;margin-top:18px}.compare-head{font-size:10px;font-weight:900;letter-spacing:.5px;margin:0 0 8px}.comparison-entry{min-height:53px;display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 7px;margin-bottom:6px}.comparison-entry b{font-size:10px;color:var(--signal);align-self:start;margin-top:6px}.comparison-entry span{font-size:11px;font-weight:750;line-height:1.2}.comparison-entry.reference b{color:var(--blue)}.points-detail{border-radius:8px;background:var(--sky);padding:13px;font-size:11px;line-height:1.45;margin:15px 0}.points-detail strong{font-weight:900}.result-total{margin:7px 0 12px;display:flex;gap:6px;align-items:baseline}.result-total strong{font-size:126px;letter-spacing:-8px;line-height:1;font-weight:950}.result-total span{font-size:48px;color:var(--blue);font-weight:900}.results-title{font-size:27px;line-height:1.08;letter-spacing:-1px;font-weight:950;margin:0 0 20px}.round-breakdown{border-top:1px solid var(--ink);padding-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:22px 0}.round-tile{background:#fff;border:1px solid var(--line);border-radius:9px;padding:12px 8px}.round-tile span{display:block;font-size:9px;color:var(--muted);font-weight:850}.round-tile b{display:block;font-size:23px;margin-top:12px;letter-spacing:-1px}.duel-card{background:var(--blue);color:#fff;border-radius:9px;padding:19px 16px;margin:14px 0 18px}.duel-card small{font-size:10px;font-weight:850;color:#CDD6FF;letter-spacing:1px}.duel-card h3{font-size:23px;line-height:1.08;margin:9px 0;font-weight:900;letter-spacing:-.7px}.duel-card p{font-size:12px;color:#E8ECFF;margin:0}.duel-comparison{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.duel-comparison>div{border:1px solid #A9BAFF;padding:12px;border-radius:8px}.duel-comparison strong{display:block;font-size:34px;margin:5px 0}.history-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:13px 0}.history-day{font-size:11px;color:var(--muted);font-weight:850;width:87px}.history-bar{flex:1;height:9px;background:#DBD7CF;border-radius:12px;overflow:hidden}.history-bar i{height:100%;display:block;background:var(--blue);border-radius:12px}.history-score{font-size:12px;font-weight:900;width:46px;text-align:right}.history-note{font-size:12px;line-height:1.5;color:var(--muted)}.method-rule{border-top:1px solid var(--line);padding-top:14px;margin:18px 0}.method-rule h3{font-size:16px;letter-spacing:-.3px}.method-rule p{font-size:13px;line-height:1.55;color:#555650}.screen-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:14px;margin-top:24px}.screen-footer span{color:var(--muted);font-size:9px;font-weight:800;letter-spacing:.7px}.foot-btn{min-height:44px;border:0;background:transparent;color:var(--muted);font-size:10px;font-weight:850;cursor:pointer;padding:9px 5px}.foot-btn:hover{color:var(--blue)}.global-footer{display:flex;justify-content:space-between;gap:20px;padding:18px 0 26px;border-top:1px solid var(--line);font-size:9px;letter-spacing:1px;color:var(--muted);font-weight:800}.loading{font-size:15px;margin-top:80px;text-align:center}.toast{background:var(--ink);color:white;padding:12px;border-radius:7px;font-size:12px;text-align:center;margin-top:12px} .game-frame .compact-note{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:1000px){.stage{grid-template-columns:minmax(0,1fr) minmax(340px,450px)}.editorial h1{font-size:clamp(51px,6vw,72px)}.editorial-bottom p{font-size:15px}}
+@media(max-width:710px){.page-wrap{padding:0 17px}.global-header{min-height:68px}.header-edition,.top-rule{display:none}.brand{font-size:24px}.brand i{width:8px;height:8px}.header-right{font-size:9px}.stage{display:block;padding:16px 0 36px}.editorial{display:none}.game-frame{box-shadow:5px 5px 0 var(--ink);padding:20px 16px;min-height:calc(100svh - 145px);}.page-intro{margin-top:25px}.display{font-size:clamp(41px,9vw,57px)}.question{font-size:clamp(27px,7vw,34px)}.global-footer{font-size:8px;line-height:1.4}.global-footer span:last-child{display:none}}
+@media(max-width:360px){.page-wrap{padding:0 12px}.game-frame{padding:16px 12px}.slot-controls{gap:1px}.micro-btn{min-width:44px;min-height:44px}.slot-name{font-size:11px}.choice{padding:8px}.display{letter-spacing:-2.6px}.comparison-entry{padding:5px}.comparison-entry span{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="global-header">
+      <a href="./" class="brand" aria-label="CrowdRank home">CROWD<span>RANK</span><i aria-hidden="true"></i></a>
+      <div class="header-right"><span class="header-edition">SOCIAL GAME / VOL. 001</span><span class="top-rule">/</span><span class="edition-label">PRACTICE EDITION</span></div>
+    </header>
+    <main class="stage">
+      <aside class="editorial" aria-label="About this game">
+        <div class="editorial-top"><span class="micro-mark"></span><span>BETTER AT READING PEOPLE THAN YOU THINK?</span></div>
+        <h1>EVERYONE<br>HAS AN<br><em>OPINION.</em><br>CAN YOU<br>GUESS IT?</h1>
+        <div class="editorial-bottom">
+          <div class="editorial-waves" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
+          <p>Three rounds.<br>Four choices.<br><strong>One score to beat.</strong></p>
+        </div>
+      </aside>
+      <section class="game-frame" aria-label="CrowdRank game" id="game" aria-live="polite">
+        <div class="loading">Preparing your challenge…</div>
+      </section>
+    </main>
+    <footer class="global-footer"><span>© CROWDRANK / AN EXPERIMENT IN READING THE ROOM</span><span>MADE FOR CURIOUS MINDS. NO FAKE VOTES.</span></footer>
+  </div>
+<script>
+(function(){
+/** Pure CrowdRank practice rules. Official scoring requires a server-held, precommitted panel benchmark. */
+function validateRank(order, optionIds) {
+  return Array.isArray(order) && Array.isArray(optionIds) && optionIds.length === 4 &&
+    order.length === 4 && new Set(order).size === 4 && new Set(optionIds).size === 4 &&
+    order.every(id => typeof id === 'string' && optionIds.includes(id));
+}
+
+function pairScore(guess, answer) {
+  if (!validateRank(guess, answer)) throw new Error('Invalid ranking');
+  let points = 0;
+  for(let i = 0; i < guess.length; i++) {
+    for(let j = i + 1; j < guess.length; j++) {
+      if (answer.indexOf(guess[i]) < answer.indexOf(guess[j])) points++;
+    }
+  }
+  return points;
+}
+
+function sumScores(scores) {
+  if (!Array.isArray(scores) || scores.length !== 3) throw new Error('Exactly three round scores required');
+  if(scores.some(score => !Number.isInteger(score) || score < 0 || score > 6)) throw new Error('Invalid round score');
+  return scores.reduce((total, score) => total + score, 0);
+}
+
+function dateKey(date = new Date()) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) throw new Error('Invalid date');
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone:'Asia/Kolkata', year:'numeric', month:'2-digit', day:'2-digit'
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.filter(part => part.type !== 'literal').map(part=>[part.type,part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+/** Seven hand-authored PRACTICE sets. Example orders are fictitious and are never represented as real votes. */
+const makeRound = (id, prompt, items, order, category = 'EVERYDAY LIFE') => ({
+  id, prompt, category, instruction:'Most annoying → least annoying',
+  options:items.map((label,i)=>({id:'abcd'[i],label})), sampleOrder:order.split('')
+});
+
+const PRACTICE_DAYS = [
+  {title:'SOCIAL CHAOS', tagline:'Four choices. Zero easy answers.', rounds:[
+    makeRound('trip','What ruins a group trip?', ['The always-late friend','The awkward money split','The playlist dictator','Nobody plans anything'],'bacd','SOCIAL LIFE'),
+    makeRound('chat','What makes a group chat unbearable?', ['Endless good-morning forwards','Voice notes longer than podcasts','Replies of just “K”','A hundred unread memes'],'badc','GROUP CHATS'),
+    makeRound('weekend','What kills weekend plans fastest?', ['“Let’s decide tomorrow”','Everyone being on their phone','A surprise work call','Three hours choosing a place'],'cadb','THE WEEKEND')
+  ]},
+  {title:'MONEY & MANNERS', tagline:'Friendships survive. Sometimes.', rounds:[
+    makeRound('borrow','What is the worst money habit?', ['Borrowing and forgetting','Splitting every tiny expense','Showing off every purchase','Always expecting someone else to pay'],'adbc','MONEY'),
+    makeRound('restaurant','What is the worst dinner-table move?', ['Taking everyone’s fries','Only showing up for dessert','Ordering big, then splitting equally','Making the waiter wait forever'],'cdab','EATING OUT'),
+    makeRound('office','What makes office life frustrating?', ['A meeting that should be a message','The reply-all email storm','Being told “quick call?”','A calendar full of fake urgency'],'acdb','WORK LIFE')
+  ]},
+  {title:'PHONE ADDICTION', tagline:'The little things that break us.', rounds:[
+    makeRound('battery','What is the worst phone moment?', ['Battery hits 1% outside','Your screen freezes during payment','You send a message to the wrong chat','No internet just when you need it'],'dbca','TECH PAIN'),
+    makeRound('reels','What makes scrolling irritating?', ['Ads louder than the video','Same video recommended again','A cliffhanger with no second part','The “part 2 on my profile” trick'],'dacb','SOCIAL MEDIA'),
+    makeRound('call','What is the worst call habit?', ['Calling five times in a row','Putting you on speaker without asking','Saying “I’ll call back” and vanishing','Talking while eating crisps'],'bcad','PHONE CALLS')
+  ]},
+  {title:'FOOD FIGHTS', tagline:'Everyone has a strong opinion.', rounds:[
+    makeRound('delivery','What is the worst food-ordering problem?', ['Missing the dipping sauce','Cold fries','A soggy pizza box','The wrong order entirely'],'dbca','TAKEAWAY'),
+    makeRound('kitchen','What ruins a shared kitchen?', ['Dirty dishes left overnight','Someone taking your leftovers','No one replacing empty items','Food scraps in the sink'],'abdc','LIVING TOGETHER'),
+    makeRound('cafe','What makes a café visit annoying?', ['Someone taking video calls loudly','No seats after ordering','A laptop charger hogging the socket','A 30-minute wait for coffee'],'adbc','CAFÉ LIFE')
+  ]},
+  {title:'CITY LIFE', tagline:'One city. A million little battles.', rounds:[
+    makeRound('commute','What makes a commute miserable?', ['Traffic that does not move','Someone playing audio aloud','A last-minute route change','An endless parking hunt'],'abdc','GETTING AROUND'),
+    makeRound('queue','Which queue habit is the worst?', ['Cutting ahead of everyone','Holding a place for ten friends','Arguing at the counter','Taking forever to decide'],'abdc','PUBLIC PLACES'),
+    makeRound('shopping','What spoils a shopping trip?', ['No prices on display','Too much pushy selling','A checkout that takes ages','Your size is always unavailable'],'bcad','SHOPPING')
+  ]},
+  {title:'FRIEND TEST', tagline:'This might start a debate.', rounds:[
+    makeRound('friend','What is the worst friend behaviour?', ['Canceling at the last minute','Telling your secret','Never cheering for you','Only calling when they need help'],'bdca','FRIENDSHIP'),
+    makeRound('birthday','What makes a birthday awkward?', ['Friends forgetting the day','Someone making it about themselves','A forced speech in public','An unexpected expensive bill'],'badc','BIRTHDAYS'),
+    makeRound('hangout','What makes a hangout go wrong?', ['One person choosing everything','Everyone checking their phone','Someone leaving without telling anyone','A friend bringing an uninvited guest'],'dcab','HANGOUTS')
+  ]},
+  {title:'THE BIG DEBATE', tagline:'You think you know people?', rounds:[
+    makeRound('habits','What is the most annoying everyday habit?', ['Talking through a movie','Stopping suddenly in a crowd','Leaving messages on read','Never putting anything back'],'badc','HUMAN BEHAVIOUR'),
+    makeRound('travel','What is the biggest travel headache?', ['Losing your luggage','A flight delayed for hours','A hotel nothing like the photos','Realising you forgot your charger'],'acbd','TRAVEL'),
+    makeRound('living','What is the worst roommate habit?', ['Eating food that is not theirs','Leaving lights on all night','Not cleaning shared spaces','Having loud calls after midnight'],'cadb','ROOMMATES')
+  ]}
+];
+
+/** Date selection is deterministic for a playable seven-day practice rotation. */
+function challengeForDate(dayString) {
+  if(typeof dayString !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dayString)) throw new Error('Invalid date format');
+  const timestamp = Date.parse(`${dayString}T00:00:00.000Z`);
+  if(!Number.isFinite(timestamp) || new Date(timestamp).toISOString().slice(0,10)!==dayString) throw new Error('Invalid date');
+  const dayIndex = Math.floor(timestamp/86400000);
+  const source=PRACTICE_DAYS[((dayIndex%7)+7)%7];
+  return {day:dayString,mode:'practice',version:'practice-v1',...source};
+}
+
+
+
+
+const VERSION='practice-v1';
+
+const newSession = day => ({day,version:VERSION,locked:[]});
+
+/** Untrusted browser data; recalculate all scores and reject corrupt histories. */
+function readSession(raw, day, challenge = challengeForDate(day)) {
+  const clean=newSession(day);
+  if(typeof raw!=='string') return clean;
+  try {
+    const parsed=JSON.parse(raw);
+    if(!parsed || parsed.day!==day || parsed.version!==VERSION || !Array.isArray(parsed.locked) || parsed.locked.length>3) return clean;
+    for(const [idx,item] of parsed.locked.entries()){
+      const round=challenge.rounds[idx];
+      if(!item || item.roundId!==round.id || !validateRank(item.rank,round.options.map(o=>o.id))) return clean;
+      const expected=pairScore(item.rank,round.sampleOrder);
+      if(item.score!==expected) return clean;
+    }
+    return {day,version:VERSION,locked:parsed.locked.map(i=>({roundId:i.roundId,rank:[...i.rank],score:i.score}))};
+  } catch { return clean; }
+}
+
+/** A locked answer can never be overwritten in the same guest session. */
+function commitRound(session, roundIndex, order, challenge){
+  if(!session || session.day!==challenge.day || session.version!==VERSION) throw new Error('Session does not match day');
+  if(!Number.isInteger(roundIndex) || roundIndex<0 || roundIndex>2) throw new Error('Invalid round');
+  if(roundIndex<session.locked.length) throw new Error('Round already locked');
+  if(roundIndex!==session.locked.length) throw new Error('Rounds must be locked in sequence');
+  const round=challenge.rounds[roundIndex];
+  if(!validateRank(order,round.options.map(o=>o.id))) throw new Error('Invalid ranking');
+  const entry={roundId:round.id,rank:[...order],score:pairScore(order,round.sampleOrder)};
+  return {...session,locked:[...session.locked,entry]};
+}
+
+function duelSearch(day,score){
+  challengeForDate(day);
+  if(!Number.isInteger(score) || score<0 || score>18) throw new Error('Invalid duel score');
+  return `?play=${encodeURIComponent(day)}&duel=${score}`;
+}
+
+/** Demo challenge comparison only. URL scores can be changed and are not verified. */
+function duelFromSearch(search){
+  if(typeof search!=='string' || search.length>220) return null;
+  try {
+    const params=new URLSearchParams(search.startsWith('?')?search.slice(1):search);
+    if(params.getAll('duel').length!==1 || params.getAll('play').length!==1) return null;
+    const day=params.get('play'), raw=params.get('duel');
+    challengeForDate(day);
+    if(!/^(0|[1-9]|1[0-8])$/.test(raw)) return null;
+    return {day,score:Number(raw)};
+  } catch {return null;}
+}
+
+function weekDays(day){
+  challengeForDate(day);
+  const initial=new Date(`${day}T00:00:00Z`);
+  const d=initial.getUTCDay();
+  initial.setUTCDate(initial.getUTCDate()-((d+6)%7));
+  return Array.from({length:7},(_,i)=>{
+    const current=new Date(initial);
+    current.setUTCDate(current.getUTCDate()+i);
+    return current.toISOString().slice(0,10);
+  });
+}
+
+
+
+
+const mount=document.getElementById('game');
+const invitation=duelFromSearch(window.location.search);
+let day=invitation?.day ?? dateKey();
+let challenge=challengeForDate(day);
+const STORE_PREFIX='crowdrank:practice-v1:';
+const escapeHTML=value=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+function stored(key){try{return localStorage.getItem(key)}catch{return null}}
+function saved(session){try{localStorage.setItem(STORE_PREFIX+day,JSON.stringify(session))}catch{/* storage may be blocked */}}
+let session=readSession(stored(STORE_PREFIX+day),day,challenge);
+let view='today';
+let ranked=[];
+let notice='';
+const setView=next=>{view=next;notice='';render();window.scrollTo({top:0,behavior:'instant'});};
+
+const currentRound=()=>challenge.rounds[session.locked.length];
+const total=()=>sumScores(session.locked.map(r=>r.score));
+const dayLabel=()=>new Date(day+'T12:00:00Z').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).toUpperCase();
+const shell=(body,foot=true)=>`<div class="game-top"><span class="wordmark">CROWD<span>RANK</span><i aria-hidden="true"></i></span><span class="date">${dayLabel()}</span></div>${body}${foot?`<div class="screen-footer"><span>THE SOCIAL PREDICTION GAME / PRACTICE</span><button class="foot-btn" data-action="about">RULES & TRUST ↗</button></div>`:''}${notice?`<div class="toast" role="status">${escapeHTML(notice)}</div>`:''}`;
+const disclosure=(label='PRACTICE DATA ONLY')=>`<div class="practice-disclosure"><strong>${label}</strong>Example rankings are fictional. No survey was conducted. Scores are unverified practice scores.</div>`;
+const actionButton=(action,label)=>`<button class="primary" data-action="${action}"><span>${label}</span><span class="arrow" aria-hidden="true">→</span></button>`;
+
+function todayView(){
+  const r=challenge.rounds[0];
+  const done=session.locked.length===3;
+  const partial=session.locked.length>0&&!done;
+  return shell(`<div class="page-intro"><div class="eyebrow">DAILY SOCIAL GAME / PLAYABLE PRACTICE</div>
+    <h2 class="display">THINK YOU<br>KNOW<br>EVERYONE?</h2>
+    <p class="lede">Make your call. See the unexpected answer. Then find out if your friend can do better.</p>
+    <div class="mode-strip"><span>03 ROUNDS</span><span>04 PICKS EACH</span><span>~90 SEC</span></div>
+    <div class="round-preview"><div class="preview-label">TODAY / ${escapeHTML(r.category)}</div>
+    <h3>${escapeHTML(r.prompt)}</h3>
+    ${r.options.slice(0,3).map((o,i)=>`<div class="preview-option"><b>${String(i+1).padStart(2,'0')}</b><span>${escapeHTML(o.label)}</span></div>`).join('')}
+    <div class="mini-note" style="margin-top:8px">CAN YOU GUESS THE REFERENCE ORDER?</div></div>
+    ${actionButton('play',done?'SEE MY RESULT':partial?`CONTINUE ROUND ${session.locked.length+1}`:"PLAY TODAY'S CHALLENGE")}
+    <p class="fine-print"><strong>Free.</strong> No sign-up. No download. Just play.</p>
+    ${invitation?`<div class="duel-card"><small>FRIEND CHALLENGE</small><h3>Someone thinks you can't beat their score.</h3><p>Finish the same three rounds to compare. Demo scores are not verified.</p></div>`:''}
+    ${disclosure()}</div>`);
+}
+
+const labelFor=(round,id)=>round.options.find(opt=>opt.id===id)?.label??'Unknown choice';
+function rankView(){
+  const round=currentRound();
+  if(!round) return resultsView();
+  const remaining=round.options.filter(opt=>!ranked.includes(opt.id));
+  const slots=Array.from({length:4},(_,i)=>{
+    const id=ranked[i],label=id?labelFor(round,id):null;
+    return `<div class="rank-slot ${label?'filled':'empty'}"><span class="rank-digit">${String(i+1).padStart(2,'0')}</span>
+      ${label?`<span class="slot-name">${escapeHTML(label)}</span><div class="slot-controls">
+      <button class="micro-btn" data-action="up" data-index="${i}" aria-label="Move ${escapeHTML(label)} up" ${i===0?'disabled':''}>↑</button>
+      <button class="micro-btn" data-action="down" data-index="${i}" aria-label="Move ${escapeHTML(label)} down" ${i===ranked.length-1?'disabled':''}>↓</button>
+      <button class="micro-btn remove" data-action="remove" data-index="${i}" aria-label="Remove ${escapeHTML(label)}">×</button>
+      </div>`:`<span class="slot-placeholder">${i===ranked.length?'Choose a pick below':'Empty rank'}</span>`}</div>`;
+  }).join('');
+  return shell(`<div class="progress-head"><span class="eyebrow">ROUND ${String(session.locked.length+1).padStart(2,'0')} / ${escapeHTML(round.category)}</span><span class="progress-num">${String(session.locked.length+1).padStart(2,'0')} / 03</span></div>
+    <div class="progress-track"><i style="width:${(session.locked.length+1)/3*100}%"></i></div>
+    <h2 class="question">${escapeHTML(round.prompt)}</h2>
+    <div class="instruction">RANK FROM MOST ANNOYING TO LEAST</div>
+    <p class="helper">Tap each pick to place it, then use the arrows to change your mind. You only get to lock once.</p>
+    <div class="ranking" aria-label="Your rank order">${slots}</div>
+    ${remaining.length?`<div class="picker-label">CHOOSE YOUR NEXT PICK · ${remaining.length} LEFT</div><div class="choice-list">${remaining.map(opt=>`<button class="choice" data-action="pick" data-id="${opt.id}"><span>${escapeHTML(opt.label)}</span><b aria-hidden="true">+</b></button>`).join('')}</div>`:`<div class="rank-done">All four placed. Your order is yours to lock.</div>`}
+    <div class="action-area"><button class="primary" data-action="lock" ${ranked.length!==4?'disabled':''}><span>${ranked.length===4?'LOCK MY GUESS':`${ranked.length} OF 4 CHOICES PLACED`}</span><span class="arrow" aria-hidden="true">→</span></button><div class="status-line" role="status" aria-live="polite">Your picks are saved once you lock. This is practice only.</div></div>`);
+}
+
+function orderList(round,order,kind){return order.map((id,i)=>`<div class="comparison-entry ${kind}"><b>${String(i+1).padStart(2,'0')}</b><span>${escapeHTML(labelFor(round,id))}</span></div>`).join('');}
+function revealView(){
+  const idx=session.locked.length-1,entry=session.locked[idx],round=challenge.rounds[idx];
+  if(!entry)return todayView();
+  const text=entry.score>=5?'YOU READ THE ROOM.':entry.score>=3?'NOT BAD. NOT PERFECT.':'THE ROOM HAD OTHER IDEAS.';
+  return shell(`<div class="reveal-head"><div class="eyebrow">ROUND ${String(idx+1).padStart(2,'0')} / REVEAL</div><h2 class="reveal-standout">${text}</h2></div>
+    <div class="score-hero"><b>${String(entry.score).padStart(2,'0')}</b><small>/ 06</small></div><div class="score-descriptor">PAIR DECISIONS MATCHED</div>
+    <div class="compare-grid"><div><p class="compare-head">YOUR GUESS</p>${orderList(round,entry.rank,'guess')}</div><div><p class="compare-head">PRACTICE REFERENCE</p>${orderList(round,round.sampleOrder,'reference')}</div></div>
+    <div class="points-detail"><strong>Why ${entry.score} points?</strong> Each round has six possible head-to-head pairs. You earn one point whenever you correctly predict which choice ranks higher in the reference order.</div>
+    ${actionButton('next',session.locked.length===3?'SEE FINAL SCORE':'NEXT ROUND')}
+    ${disclosure('REFERENCE IS ILLUSTRATIVE, NOT SURVEYED')}`);
+}
+function resultsView(){
+  if(session.locked.length!==3) return todayView();
+  const score=total();
+  const headline=score>=15?'YOU KNOW PEOPLE. MOSTLY.':score>=10?'YOU HAVE GOOD INSTINCTS.':'WELL, THAT WAS A SURPRISE.';
+  const compare=invitation&&invitation.day===day?`<div class="duel-card"><small>PRACTICE FRIEND COMPARISON</small><h3>${score>invitation.score?`You scored ${score-invitation.score} points higher.`:score<invitation.score?`They scored ${invitation.score-score} points higher.`:'It’s a tie!'}</h3>
+    <div class="duel-comparison"><div><small>YOU</small><strong>${score}</strong></div><div><small>FRIEND LINK</small><strong>${invitation.score}</strong></div></div><p>Friend-link scores are editable and not independently verified.</p></div>`:'';
+  return shell(`<div class="page-intro"><div class="eyebrow">PRACTICE RESULT / ${escapeHTML(challenge.title)}</div>
+    <div class="result-total"><strong>${String(score).padStart(2,'0')}</strong><span>/18</span></div><h2 class="results-title">${headline}</h2>
+    <div class="round-breakdown">${session.locked.map((r,i)=>`<div class="round-tile"><span>ROUND ${i+1}</span><b>${String(r.score).padStart(2,'0')}<small> / 06</small></b></div>`).join('')}</div>
+    ${compare||`<div class="duel-card"><small>THE CHALLENGE</small><h3>Think your friend can beat ${score}/18?</h3><p>Same questions, same practice reference. No answers spoiled.</p></div>`}
+    ${actionButton('share','CHALLENGE A FRIEND')}
+    <button class="secondary block" data-action="weekly">VIEW MY WEEKLY PRACTICE SCORES ↗</button>
+    <button class="secondary block" data-action="restart">RESTART THIS PRACTICE DAY</button>
+    ${disclosure()}</div>`);
+}
+function weeklyView(){
+  const dates=weekDays(day);
+  const entries=dates.map(d=>{
+    const data=readSession(stored(STORE_PREFIX+d),d,challengeForDate(d));
+    return {day:d,score:data.locked.length===3?sumScores(data.locked.map(r=>r.score)):null};
+  });
+  const totalWeek=entries.reduce((a,b)=>a+(b.score??0),0), completed=entries.filter(x=>x.score!==null).length;
+  return shell(`<div class="page-intro"><div class="eyebrow">YOUR LOCAL SCOREBOARD</div><h2 class="display compact">THIS WEEK,<br>YOUR RULES.</h2>
+    <div class="result-total"><strong style="font-size:80px">${totalWeek}</strong><span style="font-size:27px">POINTS</span></div>
+    <p class="lede">${completed} of 7 days played. These scores are only saved in this browser and aren't public rankings.</p>
+    ${entries.map(entry=>`<div class="history-item"><span class="history-day">${new Date(entry.day+'T12:00:00Z').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'})}</span>
+    <span class="history-bar"><i style="width:${(entry.score??0)/18*100}%"></i></span><span class="history-score">${entry.score===null?'—':`${entry.score} /18`}</span></div>`).join('')}
+    <p class="history-note">Practice days rotate through seven hand-written themes. Real public leaderboards will require verified accounts and a trusted game server.</p>
+    ${actionButton('home','BACK TO THE GAME')}${disclosure()}</div>`);
+}
+function aboutView(){return shell(`<div class="page-intro"><div class="eyebrow">THE RULEBOOK</div><h2 class="display compact">HOW TO<br>READ THE<br>ROOM.</h2>
+    <div class="method-rule"><h3>01 / Rank four things.</h3><p>Guess which choice will come first, second, third and last. Nothing starts in a pre-selected order.</p></div>
+    <div class="method-rule"><h3>02 / Earn up to six points.</h3><p>Each round contains six pairs of choices. A pair matches when you put the two choices in the same relative order as the reference.</p></div>
+    <div class="method-rule"><h3>03 / Do it three times.</h3><p>Three rounds add up to a score between 0 and 18. Send a practice link to a friend and see how your scores compare.</p></div>
+    <div class="method-rule"><h3>04 / No made-up crowds.</h3><p>In this preview, every reference order is a <strong>fictional sample</strong>. We have not surveyed any real players. The live version will only score against independently collected, locked votes with a clearly reported sample.</p></div>
+    <div class="method-rule"><h3>Your privacy.</h3><p>Results stay in your browser's local storage. No accounts, tracking scripts, personal profiles or external analytics are included. Friend-link practice scores can be changed by anyone with the URL.</p></div>
+    ${actionButton('home','BACK TO THE GAME')}</div>`);
+}
+function render(){
+  mount.innerHTML=({today:todayView,rank:rankView,reveal:revealView,results:resultsView,weekly:weeklyView,about:aboutView}[view]||todayView)();
+}
+function goHome(){setView('today');}
+function start(){ranked=[];setView(session.locked.length===3?'results':'rank');}
+function selectChoice(id){if(ranked.includes(id)||ranked.length===4||!currentRound()?.options.some(o=>o.id===id))return;ranked=[...ranked,id];render();}
+function moveChoice(action,index){if(!Number.isInteger(index)||index<0||index>=ranked.length)return;
+  if(action==='remove'){ranked=ranked.filter((_,i)=>i!==index);render();return;}
+  const other=action==='up'?index-1:index+1;if(other<0||other>=ranked.length)return;
+  const next=[...ranked];[next[index],next[other]]=[next[other],next[index]];ranked=next;render();
+}
+async function share(){
+  const score=total();const link=new URL(window.location.href);link.search=duelSearch(day,score);link.hash='';
+  const text=`I scored ${score}/18 on CrowdRank Practice. Think you can read the room better?`;
+  try{
+    if(navigator.share){await navigator.share({title:'CrowdRank Practice',text,url:link.toString()});notice='Challenge ready to share.';}
+    else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text+' '+link.toString());notice='Practice link copied!';}
+    else {window.prompt('Copy this challenge link',link.toString());notice='Use the link to invite your friend.';}
+  }catch(err){if(err?.name==='AbortError')return;window.prompt('Copy this challenge link',link.toString());notice='Copy the link to share it.';}
+  render();
+}
+
+mount.addEventListener('click',event=>{
+  const button=event.target.closest('button[data-action]');if(!button||button.disabled)return;
+  const action=button.dataset.action,index=Number(button.dataset.index);
+  switch(action){
+    case'home':goHome();break;
+    case'play':start();break;
+    case'pick':selectChoice(button.dataset.id);break;
+    case'up':case'down':case'remove':moveChoice(action,index);break;
+    case'lock':{
+      if(ranked.length!==4||session.locked.length===3)return;
+      try{session=commitRound(session,session.locked.length,ranked,challenge);saved(session);ranked=[];setView('reveal');}
+      catch(err){notice=err.message;render();}
+      break;
+    }
+    case'next':ranked=[];setView(session.locked.length===3?'results':'rank');break;
+    case'share':void share();break;
+    case'weekly':setView('weekly');break;
+    case'about':setView('about');break;
+    case'restart':{
+      // Reset is offered only for demonstrative practice. Official results will not reset.
+      session=newSession(day);saved(session);ranked=[];setView('today');break;
+    }
+  }
+});
+render();
+
+})();
+</script>
+</body>
+</html>
